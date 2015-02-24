@@ -30,7 +30,7 @@ passport.use(new LocalStrategy(
       var passwords = data.toString();
       var list = passwords.split('\n');
       for(var i=0; i<list.length; i++) {
-        var parts = list[i].split(',');
+        var parts = list[i].trim().split(',');
         if(parts.length === 2 && username === parts[0] && password === parts[1]) {
           return done(null, {
             user: username 
