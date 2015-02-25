@@ -80,6 +80,17 @@ app.post('/login', passport.authenticate('local', {
  * Routes 
  */
 
+
+
+
+
+app.get('/logout', function(req, res){
+               req.logout();
+               res.redirect('/');
+};
+
+
+
 app.use('/private', requireAuth, express.static('private'));
 app.use(express.static('public'));
 
